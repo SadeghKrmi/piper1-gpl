@@ -1,3 +1,9 @@
+"""
+update the legacy checkpoint path in the clean_checkpoint() and  then,
+from repo main directory, run `python3 -m piper.train.cleanup`
+"""
+
+
 import logging
 import inspect
 import tempfile
