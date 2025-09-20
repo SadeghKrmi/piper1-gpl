@@ -40,7 +40,7 @@ People/projects using Piper:
 [![A library from the Open Home Foundation](https://www.openhomefoundation.org/badges/ohf-library.png)](https://www.openhomefoundation.org/)
 
 <!-- Links -->
-[espeak-ng]: https://github.com/espeak-ng/espeak-ng
+[espeak-ng]: https://github.com/SadeghKrmi/espeak-ng
 [cli]: https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/CLI.md
 [api-http]: https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/API_HTTP.md
 [api-python]: https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/API_PYTHON.md

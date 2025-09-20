@@ -96,7 +96,7 @@ Most of the Piper voices were trained/fine-tuned on a Threadripper 1900X with 12
 Users have reported success with as little as 8GB of VRAM and alternative GPUs like the RX 7600.
 
 <!-- Links -->
-[espeak-ng]: https://github.com/espeak-ng/espeak-ng
+[espeak-ng]: https://github.com/SadeghKrmi/espeak-ng
 [lighting]: https://lightning.ai/docs/pytorch/stable/
 [librosa]: https://librosa.org/doc/latest/index.html
 [piper-checkpoints]: https://huggingface.co/datasets/rhasspy/piper-checkpoints

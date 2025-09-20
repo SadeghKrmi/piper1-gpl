@@ -23,9 +23,13 @@ WORKDIR /app
 COPY --from=builder /app/dist/piper_tts-*linux*.whl ./dist/
 RUN pip3 install ./dist/piper_tts-*linux*.whl
 RUN pip3 install 'flask>=3,<4'
+RUN pip3 install 'gunicorn>=23,<24'
 
 COPY docker/entrypoint.sh /
 
 EXPOSE 5000
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["server", "-m", "epoch=5719-step=2609600-ganji"]
+# CMD ["gunicorn"]

@@ -56,5 +56,5 @@ int main() {
 ```
 
 <!-- Links -->
-[espeak-ng]: https://github.com/espeak-ng/espeak-ng
+[espeak-ng]: https://github.com/SadeghKrmi/espeak-ng
 [onnxruntime]: https://github.com/microsoft/onnxruntime

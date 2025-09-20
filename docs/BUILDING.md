@@ -43,6 +43,6 @@ python3 -m build
 We build upstream [espeak-ng][] since they added the `espeak_TextToPhonemesWithTerminator` that Piper depends on. This function gets phonemes for text as well as the "terminator" that ends each text clause, such as a comma or period. Piper requires this terminator because punctuation is passed on to the voice model as "phonemes" so they can influence synthesis. For example, a voice trained with statements (ends with "."), questions (ends with "?"), and exclamations (ends with "!") may pronounce sentences ending in each punctuation mark differently. Commas, colons, and semicolons are also useful for proper pauses in synthesized audio.
 
 <!-- Links -->
-[espeak-ng]: https://github.com/espeak-ng/espeak-ng
+[espeak-ng]: https://github.com/SadeghKrmi/espeak-ng
 [limited-api]: https://docs.python.org/3/c-api/stable.html#limited-c-api
 [stable-abi]: https://docs.python.org/3/c-api/stable.html#stable-abi
