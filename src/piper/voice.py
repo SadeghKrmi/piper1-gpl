@@ -140,11 +140,24 @@ class PiperVoice:
             config_dict = json.load(config_file)
 
         providers: list[Union[str, tuple[str, dict[str, Any]]]]
+        
+        # Create proper session options
+        sess_options = onnxruntime.SessionOptions()
+        sess_options.enable_mem_pattern = True
+        sess_options.enable_mem_reuse = True
+        sess_options.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
+
         if use_cuda:
+            sess_options.add_session_config_entry('arena_extend_strategy', 'kSameAsRequested')
+            sess_options.add_session_config_entry('gpu_mem_limit', '12884901888')  # 12GB limit
             providers = [
                 (
                     "CUDAExecutionProvider",
-                    {"cudnn_conv_algo_search": "HEURISTIC"},
+                    {   
+                        "device_id": 0,
+                        "cudnn_conv_algo_search": "HEURISTIC",
+                        "arena_extend_strategy": "kSameAsRequested"
+                    },
                 )
             ]
             _LOGGER.debug("Using CUDA")
@@ -155,7 +168,7 @@ class PiperVoice:
             config=PiperConfig.from_dict(config_dict),
             session=onnxruntime.InferenceSession(
                 str(model_path),
-                sess_options=onnxruntime.SessionOptions(),
+                sess_options=sess_options,
                 providers=providers,
             ),
             espeak_data_dir=Path(espeak_data_dir),
