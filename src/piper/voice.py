@@ -144,7 +144,7 @@ class PiperVoice:
         # Create proper session options
         sess_options = onnxruntime.SessionOptions()
         sess_options.enable_mem_pattern = False
-        sess_options.enable_mem_reuse = False   # <-- important for GPU leaks
+        sess_options.    = False   # <-- important for GPU leaks
         sess_options.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
 
         if use_cuda:
@@ -158,7 +158,6 @@ class PiperVoice:
                         "arena_extend_strategy": "kSameAsRequested",
                         "gpu_mem_limit": str(8 * 1024 * 1024 * 1024),  # 8GB limit
                         "cudnn_conv_algo_search": "HEURISTIC",
-                        "enable_mem_reuse": "0",   # disable CUDA arena reuse
                     },
                 )
             ]
