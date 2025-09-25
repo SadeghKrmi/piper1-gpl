@@ -144,7 +144,7 @@ class PiperVoice:
         # Create proper session options
         sess_options = onnxruntime.SessionOptions()
         sess_options.enable_mem_pattern = False
-        sess_options.    = False   # <-- important for GPU leaks
+        sess_options.enable_mem_reuse = False   # <-- important for GPU leaks
         sess_options.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
 
         if use_cuda:
